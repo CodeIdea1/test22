@@ -1,0 +1,745 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+body {
+    font-family: 'Open Sans', sans-serif;
+    /* cursor: none; */
+    scroll-behavior: smooth;
+}
+.container {
+    width: 90%;
+    margin: auto;
+}
+li, a {
+    list-style: none;
+    text-decoration: none;
+}
+h2 {
+    font-size: 40px;
+}
+.header {
+    width: 100%;
+    display: flex;
+    position: fixed;
+    z-index: 99999;
+    transition: 2s;
+}
+.header .container {
+    display: flex;
+    align-items: center;
+    padding: 20px 0px;
+    position: relative;
+    justify-content: space-between;
+}
+.logo {
+    width: 70px;
+}
+.logo img {
+    width: 100%;
+}
+.header .container .left {
+    display: flex;
+}
+.header .container .links-container {
+    width: 100%;
+}
+.header .container .links-container .ul {
+    display: flex;
+    align-items: center;
+    z-index: 999999999999;
+}
+.header .container .links-container .toggle-menu {
+    background: none;
+    border: none;
+    width: 40px;
+    cursor: pointer;
+    display: none;
+}
+
+
+.header .container .links-container .toggle-menu:focus {
+    outline: none;
+}
+.header .container .links-container .toggle-menu span {
+    display: block;
+    background-color: black;
+    height: 3px;
+    margin-bottom: 4px;
+}
+.header .container li {
+    margin-left: 30px;
+    display: inline;
+}
+.header .container li a {
+    font-weight: bold;
+    font-size: 15px;
+    color: black;
+}
+.button {
+    
+    font-size: 13px;
+    font-weight: bold;
+    border: none;
+    padding: 8px 18px;
+    color: white;
+    background-color: black;
+    cursor: pointer;
+    border-radius: 20px;
+    margin-left: 30px;
+}
+.landing-page {
+    padding: 80px 0;
+    width: 100%;
+    background-image: url(../imgs/sec1-background.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    overflow: hidden;
+    transition: .7s;
+    animation-duration: 2s;
+    animation-fill-mode: backwards;
+    animation-direction: alternate-reverse;
+}
+@keyframes landing {
+    0% {
+        background-position: center;
+    }
+    50% {
+        background-position: 0px -200px ;
+    }
+    100% {
+        background-position: center;
+    }
+}
+.landing-page .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+}
+.landing-page .container .information{
+    transform: translateY(0);
+    animation-duration: 2s;  
+    z-index: 9;  
+}
+.landing-page .container .information h1 {
+    color: black;
+    font-size: 60px;
+    font-weight: bold;
+    margin-bottom: 30px;
+}
+@keyframes information {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-200px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+.landing-page .container .information div {
+    color: rgba(0, 0, 0, 0.829);
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 3.3ch;
+}
+.landing-page .container .car {
+    width: 50%;
+    position: relative;
+    animation-name: car;
+    animation-duration: .9s;
+    animation-direction: alternate-reverse;
+    animation-fill-mode: backwards;
+    transform: translateX(0);
+    animation-timing-function:cubic-bezier(0.455, 0.03, 0.515, 0.955);
+}
+.landing-page .container .car img {
+    width: 1200px;
+    z-index: 99;
+    position: absolute;
+    bottom: 0;
+    margin-left: -100px;
+}
+@keyframes car{
+    0% {
+        transform: translateX(0);
+}
+    100% {
+        transform: translateX(100px);
+}
+}
+.landing-page .container .car .layer {
+    position: absolute;
+    bottom: 4px;
+    width: 168px;
+    animation-name: layer;
+    animation-duration: .9s;
+    transform: rotate(-200deg) ;
+    animation-direction: alternate-reverse;
+    animation-fill-mode: backwards;
+}
+.landing-page .container .car .layer1 {
+    left: 200px;
+}
+.landing-page .container .car .layer2 {
+    left: 825px;
+
+}
+@keyframes layer {
+    0% {
+        transform: rotate(-200deg);
+    }
+    100% {
+        transform:rotate(0deg);
+}
+}
+.cars-logos .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.cars-logos .container .car-logo {
+    width: 37px;
+}
+.cars-logos .container .car-logo img {
+    width: 100%;
+}
+
+
+@media(max-width: 991px) {
+    .header .container .links-container .ul{
+        display: none;
+    }
+    .header .container .links-container .toggle-menu {
+        display: block;
+    }
+    .header .container .links-container .ul.open {
+        background-color: black;
+        padding: 20px 0;
+        position: absolute;
+        display: block;
+        left: 0;
+        top: 74px;
+        width: 100%;
+        border-radius: 4px;
+        z-index: 99999999999;
+    }
+    .header .container .links-container .ul.open li {
+        display: block;
+        margin-bottom: 15px;
+    }
+    .header .container .links-container .ul.open li a {
+        color: white;
+
+    }
+    .button {
+        display: none
+    }
+
+
+    .landing-page {
+        padding: 120px 0 30px 0 ;
+    }
+    .landing-page .container .information h1 {
+        font-size: 25px;
+        margin-bottom: 15px;
+        text-align: center;
+    }
+    .landing-page .container .information div {
+        width: 90%;
+        margin: auto;
+        text-align: center;
+        font-size: 13px;
+        opacity: 0;
+        animation-name: text;
+        animation-duration: 1s;
+        animation-delay: 4s;
+        animation-fill-mode: both;
+    }
+    @keyframes text{
+        100% {
+            opacity: 1;
+        }
+    }
+    .landing-page .container .car {
+        width: auto;
+        animation-name: mobile-car;
+        animation-duration: 4s;
+        animation-play-state: running;
+        animation-delay: 2s;
+        animation-fill-mode: both;
+        transform: translateX(0px);
+        animation-direction:alternate;
+    }
+    
+    .landing-page .container .car img {
+        width: 380px;
+    }
+    @keyframes mobile-car{
+        0% {
+            transform: translateX(0px);
+        }
+        30% {
+            transform: translateX(-240px);
+        }
+        50% {
+            transform: translateX(-240px);
+        }
+        60% {
+            transform: translateX(-240px);
+        }
+        100% {
+            transform: translateX(-850px);  
+        }
+    }
+    
+    .landing-page .container .car .layer {
+        bottom: 4px;
+        width: 55px;
+        animation-name: layer;
+        animation-duration: 4s;
+        transform: rotate(-200deg) ;
+        animation-direction: alternate;
+        animation-fill-mode: both;
+        animation-delay: 2s;
+    }
+    .landing-page .container .car .layer1 {
+        left: 64px;
+    }
+    .landing-page .container .car .layer2 {
+        left: 260px;
+    
+    }
+    @keyframes layer {
+        0% {
+            transform: rotate(-200deg);
+        }
+        30% {
+            transform:rotate(-400deg);
+        }
+        50% {
+            transform:rotate(-400deg);
+        }
+        60% {
+            transform:rotate(-400deg);
+        }
+        100% {
+            transform:rotate(-700deg);
+        }
+    }
+    .cars-logos .container .car-logo {
+        width: 21px;
+    }
+}
+
+
+
+.modem-app .container {
+    display: flex;
+    padding: 100px 0 10px 0;
+}
+.modem-app .container .mobiles {
+    width: 50%;
+    position: relative;
+    animation-duration: 3s;
+}
+.modem-app .container .mobiles .mobile {
+    transition: .9s;
+    transform: translateY(200px);
+}
+@keyframes mobiles {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-400px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+.modem-app .container .mobiles .mobile1 {
+    width: 250px;
+    transform: translateY(200px) rotate(-5deg);
+}
+.modem-app .container .mobiles .mobile2 {
+    width: 230px;
+    position: absolute;
+    bottom: 20%;
+    left: 25%;
+}
+.modem-app .container .mobiles .mobile1.animation {
+    transform: translateY(0) rotate(-0deg);
+}
+.modem-app .container .mobiles .mobile2.animation {
+    transform: translateY(0) rotate(-6deg);
+}
+
+.modem-app .container .information {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 50px 30px;
+}
+.modem-app .container .information p {
+    line-height: 3.5ch;
+    font-size: 20px;
+}
+.modem-app .container .information .button {
+    font-size: 13px;
+    font-weight: bold;
+    border: none;
+    padding: 10px 18px;
+    color: white;
+    background-color: black;
+    cursor: pointer;
+    border-radius: 20px;
+    margin-left: 0px;
+    width: 200px;
+}
+@media (max-width: 991px) {
+    .modem-app .container {
+        padding: 10px 0 10px 0;
+    }
+    .modem-app .container .information {
+        width: 90%;
+        text-align: center;
+        justify-content: start;
+        padding: 50px 0px;
+        margin: auto;
+    }
+    .modem-app .container .information h2{
+        font-size: 25px;
+        margin-bottom: 15px;
+    }
+    .modem-app .container .information p {
+        line-height: 3.5ch;
+        font-size: 13px;
+    }
+    .modem-app .container .mobiles {
+        display: none;
+    }
+}
+
+.vehicle-fleet {
+    padding: 50px 0;
+}
+.vehicle-fleet h2, .vehicle-fleet .container p {
+    margin: 0 auto 10px auto;
+    text-align: center;
+    line-height: 3.5ch;
+    width: 60%;
+}
+.switcher {
+    width:500px;
+    display: flex;
+    margin: 20px auto 0 auto;
+}
+.switcher li {
+    background-color: rgb(218, 218, 218);
+    padding: 8px 10px;
+    border-radius: 7px;
+    font-weight: 600;
+    font-size: 13px;
+    color: rgba(0, 0, 0, 0.89);
+    margin: auto;
+
+}
+.switcher li.active {
+    background-color: black;
+    color: white;
+}
+.vehicles-container {
+    padding: 40px 0;
+    overflow: hidden;
+}
+.vehicles-container .car {
+    width: calc(100% / 3 - 15px);
+    height: 200px;
+    overflow: hidden;
+    float: left;
+    margin-bottom: 20px;
+    margin-left: 15px;
+    border-radius: 20px;
+}
+.vehicles-container .car img {
+    width: 100%;
+    transform: scale(1.5);
+    transition: .7s;
+    border-radius: 20px;
+}
+.vehicles-container .car img.animation {
+    transform: scale(1);
+}
+@media (max-width: 991px) {
+    .vehicle-fleet {
+        padding: 0
+    }
+    .vehicle-fleet h2 {
+        font-size: 25px;
+        width: 90%;
+    }
+    .vehicle-fleet .container p {
+        width: 90%;
+        margin: auto;
+        font-size: 13px;
+    }
+
+    .switcher {
+        width: 90%;
+    }
+    .switcher li {
+        padding: 5px 8px;
+        border-radius: 4px;
+        font-weight: 700;
+        font-size: 9px;
+    }
+
+    .vehicles-container .car {
+        width: calc(100% / 2 - 8px);
+        height: 90px;
+        margin: 0 8px 8px 0 ;
+        border-radius: 12px;
+    }
+}
+
+.features {
+    padding: 10px 0 50px 0;
+}
+.features .container {
+    overflow: hidden;
+}
+.features .container p {
+    width: 50%;
+    margin: 20px 0 50px 0;
+}
+.cards-container .card {
+    width: calc(100% / 4 - 15px);
+    height: 250px;
+    float: left;
+    border: 1px solid rgba(0, 0, 0, 0.336);
+    border-radius: 7px;
+    margin-left: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 30px;
+}
+.cards-container .card {
+    font-weight: 700;
+    font-size: 15px;
+    transition: 1s;
+    transform: translateY(200px);
+}
+.cards-container .card2 {
+    transform: translateY(260px);
+    transition: 1.5s;
+}
+.cards-container .card3 {
+    transform: translateY(300px);
+    transition: 2s;
+
+}
+.cards-container .card4 {
+    transform: translateY(340px);
+    transition: 2.5s;
+}
+.cards-container .card.animation {
+    transform: translateY(0);
+}
+.cards-container .card .icon {
+    width: 70px;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 128, 0, 0.199);
+    border-radius: 50%;
+    text-align: center;
+    font-size: 0px;
+    color: rgba(0, 0, 0, 0.726);
+    transition: 2s;
+}
+.cards-container .card2 .icon{
+    background-color: rgba(255, 166, 0, 0.171);
+}
+.cards-container .card3 .icon{
+    background-color: rgba(0, 0, 255, 0.164);
+
+}
+.cards-container .card4 .icon{
+    background-color: rgba(216, 112, 147, 0.247);
+}
+.cards-container .card .icon.animation {
+    font-size: 33px;
+}
+@media (max-width: 991px) {
+    .features h2 {
+        font-size: 25px;
+        text-align: center;
+    }
+    .features .container p {
+        width: 90%;
+        font-size: 13px;
+        text-align: center;
+        margin: 20px auto;
+    }
+    .cards-container .card {
+        width: calc(90% - 0px);
+        height: 150px;
+        margin-bottom: 10px;
+        align-items: center;
+        font-size: 12px;
+        text-align: center;
+    }
+    .cards-container .card .icon {
+        width: 50px;
+        height: 50px;
+        font-size: 0;
+    }
+    .cards-container .card .icon.animation {
+        font-size: 23px;
+    }
+    .cards-container .card.animation {
+        margin-top: 8px;
+    }
+}
+
+
+.footer .container {
+    padding: 50px 0;
+    display: flex;
+    flex-direction: column;
+}
+.footer .container .drive-card-container {
+    width: 100%;
+    height: 400px;
+    overflow: hidden;
+    border-radius: 7px;
+    position: relative;
+    box-shadow: 0px 12px 13px 5px rgba(0, 0, 0, 0.226);
+}
+.footer .container .drive-card {
+    width: 100%;
+}
+.footer .container .drive-card-container .text-container{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.178), transparent, transparent);
+    left: 0;
+    top: 0;
+    padding: 70px 0;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.text-container h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+.text-container p {
+    width: 60%;
+    text-align: center;
+    line-height: 3.5ch;
+    font-size: 18px;
+}
+.text-container .button {
+    margin: auto;
+    background-color: white;
+    color: black;
+    width: 200px;
+}
+
+.footer .container .links {
+    width: 100%;
+    display: flex;
+    padding: 70px 0 0 0;
+}
+.footer .container .links .column {
+    display: flex;
+    margin-left: 100px;
+}
+.footer .container .links .column2, .column3{
+    flex-direction: column;
+}
+.footer .container .links .column a {
+    margin: 25px;
+    color: black;
+    font-weight: 600;
+    font-size: 15px;
+}
+.footer .container .links .column3 a {
+    text-align: start;
+    margin-left: 0;
+}
+.footer .container .links .column form{
+    position: relative;
+}
+.footer .container .links .column form i {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    font-size: 13px;
+    color: rgba(0, 0, 0, 0.5);
+    transform: translateY(-50%);
+}
+.footer .container .links .column form input {
+    border-radius: 7px;
+    padding: 7px 12px;
+    border: none;
+    background-color: rgb(218, 218, 218);
+    outline: none;
+}
+
+.footer .container .links .column .logo {
+    margin-top: 30px;
+}
+@media (max-width: 991px) {
+    .footer .container {
+        padding: 0;
+    }
+    .footer .container .drive-card-container {
+        height: 240px;
+    }
+    .footer .container .drive-card {
+        height: 250px;
+    }
+    .footer .container .drive-card-container .text-container {
+        padding: 50px 10px;
+    }
+    .text-container h2 {
+        font-size: 25px;
+    }
+    .text-container p {
+        font-size: 13px;
+    }
+    .footer .container .links {
+        padding: 50px 0;
+        flex-direction: column;
+    }
+    .footer .container .links .column {
+        margin-left: 0px;
+        align-items: center;
+    }
+    .footer .container .links .column2, .column3 {
+        flex-direction: row;
+    }
+    .footer .container .links .column a {
+        font-size: 11px;
+        margin: 15px;
+    }
+    .footer .container .links .column .logo {
+        display: none;
+    }
+    .footer .container .links .column3 a {
+        display: none;
+    }
+    
+}
